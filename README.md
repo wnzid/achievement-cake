@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# 🎂 Achievement Cake
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Achievement Cake** is a desktop application that turns achievements into something visual, shared, and meaningful inspired by the recent *achievement cake* trend.
 
-Currently, two official plugins are available:
+Instead of tracking progress with numbers or streaks, achievements are represented as **toothpicks placed on a cake**, making progress feel celebratory, intentional, and human.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Why this project exists
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project started as something personal.
 
-## Expanding the ESLint configuration
+I originally built **Achievement Cake** for my girlfriend as a way to celebrate **our achievements together**, even while being physically apart.  
+It helped turn individual efforts into something shared, visible, and emotionally meaningful.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The idea comes from the **achievement cake trend**, where accomplishments are marked on a cake rather than logged traditionally.  
+I wanted to turn that idea into a **real, usable application** - one that supports connection, not pressure.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Now, it’s published so that **other long-distance couples** (and anyone who wants to celebrate progress together) can use it too.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ❤️ Dedication
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project is dedicated to:
+- My partner - for the love, patience, and motivation we share across distance
+- All long-distance couples who want to celebrate progress *together*
+- Anyone who believes that achievements don’t have to be competitive or lonely
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧩 Features
+
+- 🎂 **Multiple cakes**
+  - Create, rename, and manage different shared spaces
+- 📌 **Achievements as toothpicks**
+  - Visually mark achievements on the cake
+- 🎨 **Themes**
+  - Customize the look and feel
+- 💾 **Manual save**
+  - Nothing is saved unless you press **Save**
+  - Closing the app without saving resets changes
+- 🖼️ **Export**
+  - Export the cake as a PNG image
+  - Export and import data as JSON
+- 📴 **Offline-first**
+  - No internet required
+  - All data stored locally
+
+---
+
+## 🛠️ Technologies used
+
+### Frontend
+- **React** - component-based UI
+- **TypeScript** - type safety and maintainability
+- **Vite** - fast development and optimized builds
+
+### Desktop
+- **Electron** - native desktop application wrapper
+- **Electron Builder** - Windows installer packaging
+
+### Rendering & Storage
+- **HTML5 Canvas / SVG** - cake and toothpick rendering
+- **Local Storage** - lightweight local persistence
+
+### Tooling
+- **Git & GitHub** - version control and releases
+
+---
+
+## 🖥️ Platform support
+
+- ✅ Windows 10 / 11  
+
+---
+
+## 📦 Installation (Windows)
+
+1. Go to the **Releases** section of this repository
+2. Download: Achievement Cake Setup.exe
+3. Run the installer
+4. Launch from the Start Menu
+
+No browser, no Node.js, no internet required.
+
+---
+
+## 🔐 Privacy
+
+- No accounts
+- No analytics
+- No tracking
+- No cloud storage
+
+Everything stays on your machine.
+
+---
+
+# Feel free to let me know if you want any changes or face any issues. Thanks
