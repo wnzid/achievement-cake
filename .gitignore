@@ -7,9 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Vite / build output
+dist/
+dist-ssr/
+
+# Electron Builder output
+release/
+out/
+build/
+builder-debug.yml
+builder-effective-config.yaml
+
+# Misc
 *.local
 
 # Editor directories and files
@@ -17,6 +29,7 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj

@@ -1,6 +1,7 @@
+import { defaultThemeId } from "./themes";
+
 export const ACH_CAKES_INDEX_KEY = "ac_cakes_index_v1";
 export const ACTIVE_CAKE_KEY = "ac_active_cake_v1";
-
 export const cakeKey = (id: string) => `ac_cake_${id}_v1`;
 
 type CakeMeta = {
@@ -8,6 +9,7 @@ type CakeMeta = {
   name: string;
   createdAt: number;
   updatedAt: number;
+  themeId: string;
 };
 
 type CakesIndex = {
@@ -49,9 +51,9 @@ export function saveCakePicks(id: string, picks: any[]) {
   localStorage.setItem(cakeKey(id), JSON.stringify(picks));
 }
 
-export function createNewCake(name: string, initialPicks: any[] = []) {
+export function createNewCake(name: string, initialPicks: any[] = [], themeId: string = defaultThemeId) {
   const id = (crypto as any).randomUUID();
-  const meta: CakeMeta = { id, name, createdAt: now(), updatedAt: now() };
+  const meta: CakeMeta = { id, name, createdAt: now(), updatedAt: now(), themeId };
   const idx = loadIndex();
   const newIdx: CakesIndex = idx
     ? { cakes: [...idx.cakes, meta], activeId: id }
@@ -87,6 +89,16 @@ export function updateCakeMetaName(id: string, name: string) {
   saveIndex(idx);
 }
 
+export function updateCakeTheme(id: string, themeId: string) {
+  const idx = loadIndex();
+  if (!idx) return;
+  const found = idx.cakes.find(c => c.id === id);
+  if (!found) return;
+  found.themeId = themeId;
+  found.updatedAt = now();
+  saveIndex(idx);
+}
+
 export function touchCakeUpdated(id: string) {
   const idx = loadIndex();
   if (!idx) return;
@@ -115,5 +127,5 @@ export function duplicateCake(id: string, newName?: string) {
   if (!src) return null;
   const picks = loadCakePicks(id);
   const name = newName || `Copy of ${src.name}`;
-  return createNewCake(name, picks);
+  return createNewCake(name, picks, (src as any).themeId ?? defaultThemeId);
 }
