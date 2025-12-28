@@ -73,6 +73,10 @@ The idea comes from the **achievement cake trend**, where accomplishments are ma
 
 Now, it’s published so that **other long-distance couples** (and anyone who wants to celebrate progress together) can use it too.
 
+## License
+
+All rights reserved.
+
 ---
 
 ## Feel free to let me know if you want any changes or face any issues. Thanks
